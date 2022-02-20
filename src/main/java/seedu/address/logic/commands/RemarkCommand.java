@@ -1,14 +1,14 @@
 package seedu.address.logic.commands;
 
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
+
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Remark;
-
-import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.List;
 
@@ -34,6 +34,19 @@ public class RemarkCommand extends Command {
 
     public static final String MESSAGE_NOT_IMPLEMENTED_YET =
             "Remark command not implemented yet";
+
+    /**
+     * Constructor for RemarkCommand
+     *
+     * @param index index of contact to add remark
+     * @param remark remark to add
+     */
+    public RemarkCommand(Index index, Remark remark) {
+        requireAllNonNull(index, remark);
+
+        this.index = index;
+        this.remark = remark;
+    }
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
@@ -62,13 +75,6 @@ public class RemarkCommand extends Command {
     private String generateSuccessMessage(Person personToEdit) {
         String message = !remark.value.isEmpty() ? MESSAGE_ADD_REMARK_SUCCESS : MESSAGE_DELETE_REMARK_SUCCESS;
         return String.format(message, personToEdit);
-    }
-
-    public RemarkCommand(Index index, Remark remark) {
-        requireAllNonNull(index, remark);
-
-        this.index = index;
-        this.remark = remark;
     }
 
     @Override

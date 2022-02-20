@@ -96,6 +96,12 @@ public class ParserUtil {
         return new Email(trimmedEmail);
     }
 
+    /**
+     * Parses a remark
+     * @param remark remark to parse
+     * @return a remark class
+     * @throws ParseException
+     */
     public static Remark parseRemark(String remark) throws ParseException {
         requireNonNull(remark);
         return new Remark(remark);
