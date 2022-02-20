@@ -28,7 +28,8 @@ public class GitProfileCommandParser implements Parser<GitProfileCommand> {
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, GitProfileCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                    GitProfileCommand.MESSAGE_USAGE), pe);
         }
 
         String gitHubUsername = argMultimap.getValue(PREFIX_GITHUB).orElse("");
