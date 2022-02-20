@@ -27,7 +27,7 @@ public class GitProfileCommand extends Command {
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_GITHUB + " User-one";
 
-    public static final String MESSAGE_ADD_GITHUB_SUCCESS = "The GitHub profile of the person was updated: ";
+    public static final String MESSAGE_ADD_GITHUB_SUCCESS = "The GitHub profile of the person was updated: %1$s";
 
     private final Index index;
 
