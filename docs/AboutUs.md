@@ -57,3 +57,11 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 * Role: Developer
 * Responsibilities: UI
+
+### Junha Park
+
+<img src="images/b1llp4rk.png" width="200px">
+
+[[github](http://github.com/B1LLP4RK)]
+
+* Role: Developer
