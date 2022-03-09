@@ -1,4 +1,4 @@
-package seedu.address.commons.util;
+package seedu.address.model.util.commons.util;
 
 import static java.util.Objects.requireNonNull;
 

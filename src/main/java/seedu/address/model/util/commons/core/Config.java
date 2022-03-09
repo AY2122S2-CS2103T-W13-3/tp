@@ -1,4 +1,4 @@
-package seedu.address.commons.core;
+package seedu.address.model.util.commons.core;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -44,7 +44,7 @@ public class Config {
         Config o = (Config) other;
 
         return Objects.equals(logLevel, o.logLevel)
-                && Objects.equals(userPrefsFilePath, o.userPrefsFilePath);
+            && Objects.equals(userPrefsFilePath, o.userPrefsFilePath);
     }
 
     @Override

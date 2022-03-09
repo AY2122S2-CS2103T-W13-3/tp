@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 
 import org.junit.jupiter.api.Test;
 
+import seedu.address.model.util.commons.util.StringUtil;
+
 public class StringUtilTest {
 
     //---------------- Tests for isNonZeroUnsignedInteger --------------------------------------

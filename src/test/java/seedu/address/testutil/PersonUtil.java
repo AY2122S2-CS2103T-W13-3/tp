@@ -54,7 +54,7 @@ public class PersonUtil {
         descriptor.getPhone().ifPresent(phone -> sb.append(PREFIX_PHONE).append(phone.value).append(" "));
         descriptor.getEmail().ifPresent(email -> sb.append(PREFIX_EMAIL).append(email.value).append(" "));
         descriptor.getGithubUsername().ifPresent(address ->
-                sb.append(PREFIX_GITHUB_USERNAME).append(address.value).append(" "));
+            sb.append(PREFIX_GITHUB_USERNAME).append(address.value).append(" "));
         if (descriptor.getTags().isPresent()) {
             Set<Tag> tags = descriptor.getTags().get();
             if (tags.isEmpty()) {
@@ -69,7 +69,7 @@ public class PersonUtil {
                 sb.append(PREFIX_SKILL);
             } else {
                 skillSet.forEach(s -> sb.append(PREFIX_SKILL).append(s.skillName).append("_")
-                        .append(s.skillProficiency).append(" "));
+                    .append(s.skillProficiency).append(" "));
             }
         }
         return sb.toString();

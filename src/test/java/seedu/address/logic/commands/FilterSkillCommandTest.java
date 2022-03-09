@@ -3,8 +3,8 @@ package seedu.address.logic.commands;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.commons.core.Messages.MESSAGE_PERSONS_LISTED_OVERVIEW;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.model.util.commons.core.Messages.MESSAGE_PERSONS_LISTED_OVERVIEW;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.ELLE;
 import static seedu.address.testutil.TypicalPersons.GEORGE;
@@ -29,9 +29,9 @@ class FilterSkillCommandTest {
     @Test
     public void equals() {
         PersonContainsSkillPredicate firstPredicate =
-                new PersonContainsSkillPredicate(new Skill("skill1"));
+            new PersonContainsSkillPredicate(new Skill("skill1"));
         PersonContainsSkillPredicate secondPredicate =
-                new PersonContainsSkillPredicate(new Skill("skill2"));
+            new PersonContainsSkillPredicate(new Skill("skill2"));
 
         FilterSkillCommand filterFirstSkillCommand = new FilterSkillCommand(firstPredicate);
         FilterSkillCommand filterSecondSkillCommand = new FilterSkillCommand(secondPredicate);

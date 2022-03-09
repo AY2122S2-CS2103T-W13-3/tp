@@ -1,6 +1,6 @@
 package seedu.address.model.person;
 
-import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
+import static seedu.address.model.util.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -25,11 +25,13 @@ public class Person {
     // Data fields
     private final Set<Tag> tags = new HashSet<>();
     private final Set<Skill> skillSet = new HashSet<>();
+    private final Remark remark;
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, GithubUsername username, Set<Tag> tags, Set<Skill> skillSet) {
+    public Person(Name name, Phone phone, Email email, GithubUsername username, Set<Tag> tags, Set<Skill> skillSet,
+                  Remark remark) {
         requireAllNonNull(name, phone, email, username, tags, skillSet);
         this.name = name;
         this.phone = phone;
@@ -37,6 +39,7 @@ public class Person {
         this.githubUsername = username;
         this.tags.addAll(tags);
         this.skillSet.addAll(skillSet);
+        this.remark = remark;
         //this.skillSet.add(new Skill("Python",30));
     }
 
@@ -54,6 +57,10 @@ public class Person {
 
     public GithubUsername getGithubUsername() {
         return githubUsername;
+    }
+
+    public Remark getRemark() {
+        return remark;
     }
 
     /**
@@ -87,6 +94,7 @@ public class Person {
         }
         return false;
     }
+
     /**
      * Returns true if both persons have the same name.
      * This defines a weaker notion of equality between two persons.
@@ -97,7 +105,7 @@ public class Person {
         }
 
         return otherPerson != null
-                && otherPerson.getName().equals(getName());
+            && otherPerson.getName().equals(getName());
     }
 
     /**
@@ -116,11 +124,11 @@ public class Person {
 
         Person otherPerson = (Person) other;
         return otherPerson.getName().equals(getName())
-                && otherPerson.getPhone().equals(getPhone())
-                && otherPerson.getEmail().equals(getEmail())
-                && otherPerson.getGithubUsername().equals(getGithubUsername())
-                && otherPerson.getTags().equals(getTags())
-                && otherPerson.getSkillSet().equals(getSkillSet());
+            && otherPerson.getPhone().equals(getPhone())
+            && otherPerson.getEmail().equals(getEmail())
+            && otherPerson.getGithubUsername().equals(getGithubUsername())
+            && otherPerson.getTags().equals(getTags())
+            && otherPerson.getSkillSet().equals(getSkillSet());
     }
 
     @Override
@@ -133,12 +141,14 @@ public class Person {
     public String toString() {
         final StringBuilder builder = new StringBuilder();
         builder.append(getName())
-                .append("; Phone: ")
-                .append(getPhone())
-                .append("; Email: ")
-                .append(getEmail())
-                .append("; GitHub Username: ")
-                .append(getGithubUsername());
+            .append("; Phone: ")
+            .append(getPhone())
+            .append("; Email: ")
+            .append(getEmail())
+            .append("; GitHub Username: ")
+            .append(getGithubUsername())
+            .append("; Remark: ")
+            .append(getRemark());
 
         Set<Tag> tags = getTags();
         if (!tags.isEmpty()) {

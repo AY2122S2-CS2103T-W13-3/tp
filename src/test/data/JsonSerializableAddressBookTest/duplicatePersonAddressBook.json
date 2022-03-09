@@ -1,15 +1,24 @@
 {
-  "persons": [ {
-    "name": "Alice Pauline",
-    "phone": "94351253",
-    "email": "alice@example.com",
-    "username": "alice-123",
-    "tagged": [ "friends" ],
-    "skillSet" : [ "C_50" ]
-  }, {
-    "name": "Alice Pauline",
-    "phone": "94351253",
-    "email": "pauline@example.com",
-    "username": "alice-123"
-  } ]
+  "persons": [
+    {
+      "name": "Alice Pauline",
+      "phone": "94351253",
+      "email": "alice@example.com",
+      "username": "alice-123",
+      "tagged": [
+        "friends"
+      ],
+      "skillSet": [
+        "C_50"
+      ],
+      "remark": ""
+    },
+    {
+      "name": "Alice Pauline",
+      "phone": "94351253",
+      "email": "pauline@example.com",
+      "username": "alice-123",
+      "remark": ""
+    }
+  ]
 }

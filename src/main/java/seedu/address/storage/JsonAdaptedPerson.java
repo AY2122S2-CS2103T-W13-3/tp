@@ -9,14 +9,15 @@ import java.util.stream.Collectors;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.GithubUsername;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.Remark;
 import seedu.address.model.tag.Skill;
 import seedu.address.model.tag.Tag;
+import seedu.address.model.util.commons.exceptions.IllegalValueException;
 
 /**
  * Jackson-friendly version of {@link Person}.
@@ -31,15 +32,17 @@ class JsonAdaptedPerson {
     private final String username;
     private final List<JsonAdaptedTag> tagged = new ArrayList<>();
     private final List<JsonAdaptedSkill> skillSet = new ArrayList<>();
+    private final String remark;
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
      */
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
-            @JsonProperty("email") String email, @JsonProperty("username") String username,
-            @JsonProperty("tagged") List<JsonAdaptedTag> tagged,
-            @JsonProperty("skillSet") List<JsonAdaptedSkill> skillSet) {
+                             @JsonProperty("email") String email, @JsonProperty("username") String username,
+                             @JsonProperty("tagged") List<JsonAdaptedTag> tagged,
+                             @JsonProperty("skillSet") List<JsonAdaptedSkill> skillSet,
+                             @JsonProperty("remark") String remark) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -50,6 +53,7 @@ class JsonAdaptedPerson {
         if (skillSet != null) {
             this.skillSet.addAll(skillSet);
         }
+        this.remark = remark;
     }
 
     /**
@@ -61,11 +65,12 @@ class JsonAdaptedPerson {
         email = source.getEmail().value;
         username = source.getGithubUsername().value;
         tagged.addAll(source.getTags().stream()
-                .map(JsonAdaptedTag::new)
-                .collect(Collectors.toList()));
+            .map(JsonAdaptedTag::new)
+            .collect(Collectors.toList()));
         skillSet.addAll(source.getSkillSet().stream()
-                .map(JsonAdaptedSkill::new)
-                .collect(Collectors.toList()));
+            .map(JsonAdaptedSkill::new)
+            .collect(Collectors.toList()));
+        remark = source.getRemark().value;
     }
 
     /**
@@ -93,6 +98,12 @@ class JsonAdaptedPerson {
         }
         final Name modelName = new Name(name);
 
+        if (remark == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Remark.class.getSimpleName()));
+        }
+
+        final Remark modelRemark = new Remark(remark);
+
         if (phone == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName()));
         }
@@ -111,7 +122,7 @@ class JsonAdaptedPerson {
 
         if (username == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
-                    GithubUsername.class.getSimpleName()));
+                GithubUsername.class.getSimpleName()));
         }
         if (!GithubUsername.isValidUsername(username)) {
             throw new IllegalValueException(GithubUsername.MESSAGE_CONSTRAINTS);
@@ -120,7 +131,7 @@ class JsonAdaptedPerson {
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
         final Set<Skill> modelSkill = new HashSet<>(personSkillSet);
-        return new Person(modelName, modelPhone, modelEmail, modelGithubUsername, modelTags, modelSkill);
+        return new Person(modelName, modelPhone, modelEmail, modelGithubUsername, modelTags, modelSkill, modelRemark);
     }
 
 }

@@ -8,6 +8,7 @@ import seedu.address.model.person.GithubUsername;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.Remark;
 import seedu.address.model.tag.Skill;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
@@ -21,6 +22,7 @@ public class PersonBuilder {
     public static final String DEFAULT_PHONE = "85355255";
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_USERNAME = "amybee99";
+    public static final String DEFAULT_REMARK = "";
 
     private Name name;
     private Phone phone;
@@ -28,6 +30,7 @@ public class PersonBuilder {
     private GithubUsername githubUsername;
     private Set<Tag> tags;
     private Set<Skill> skillSet;
+    private Remark remark;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -39,6 +42,7 @@ public class PersonBuilder {
         githubUsername = new GithubUsername(DEFAULT_USERNAME);
         tags = new HashSet<>();
         skillSet = new HashSet<>();
+        remark = new Remark(DEFAULT_REMARK);
     }
 
     /**
@@ -51,6 +55,7 @@ public class PersonBuilder {
         githubUsername = personToCopy.getGithubUsername();
         tags = new HashSet<>(personToCopy.getTags());
         skillSet = new HashSet<>(personToCopy.getSkillSet());
+        remark = personToCopy.getRemark();
     }
 
     /**
@@ -64,7 +69,7 @@ public class PersonBuilder {
     /**
      * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Person} that we are building.
      */
-    public PersonBuilder withTags(String ... tags) {
+    public PersonBuilder withTags(String... tags) {
         this.tags = SampleDataUtil.getTagSet(tags);
         return this;
     }
@@ -72,7 +77,7 @@ public class PersonBuilder {
     /**
      * Parses the {@code skill} into a {@code Set<Skill>} and set it to the {@code Person} that we are building.
      */
-    public PersonBuilder withSkillSet(String ... skillSet) {
+    public PersonBuilder withSkillSet(String... skillSet) {
         this.skillSet = SampleDataUtil.getSkillSet(skillSet);
         return this;
     }
@@ -82,6 +87,17 @@ public class PersonBuilder {
      */
     public PersonBuilder withGithubUsername(String username) {
         this.githubUsername = new GithubUsername(username);
+        return this;
+    }
+
+    /**
+     * Sets the {@code Remark} of the {@code Person} that we are building.
+     *
+     * @param remark
+     * @return
+     */
+    public PersonBuilder withRemark(String remark) {
+        this.remark = new Remark(remark);
         return this;
     }
 
@@ -102,7 +118,7 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, phone, email, githubUsername, tags, skillSet);
+        return new Person(name, phone, email, githubUsername, tags, skillSet, remark);
     }
 
 }

@@ -6,6 +6,8 @@ import static seedu.address.testutil.Assert.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
+import seedu.address.model.util.commons.util.FileUtil;
+
 public class FileUtilTest {
 
     @Test

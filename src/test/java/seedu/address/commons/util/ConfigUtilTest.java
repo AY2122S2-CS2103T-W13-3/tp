@@ -13,8 +13,9 @@ import java.util.logging.Level;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-import seedu.address.commons.core.Config;
-import seedu.address.commons.exceptions.DataConversionException;
+import seedu.address.model.util.commons.core.Config;
+import seedu.address.model.util.commons.exceptions.DataConversionException;
+import seedu.address.model.util.commons.util.ConfigUtil;
 
 public class ConfigUtilTest {
 
@@ -108,8 +109,8 @@ public class ConfigUtilTest {
 
     private Path addToTestDataPathIfNotNull(String configFileInTestDataFolder) {
         return configFileInTestDataFolder != null
-                                  ? TEST_DATA_FOLDER.resolve(configFileInTestDataFolder)
-                                  : null;
+            ? TEST_DATA_FOLDER.resolve(configFileInTestDataFolder)
+            : null;
     }
 
 

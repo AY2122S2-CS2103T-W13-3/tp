@@ -1,7 +1,7 @@
 package seedu.address.model.tag;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
+import static seedu.address.model.util.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Skill in the address book.
@@ -20,7 +20,7 @@ public class Skill {
     /**
      * Constructs a {@code Skill}.
      *
-     * @param skillName A valid skill name.
+     * @param skillName        A valid skill name.
      * @param skillProficiency A valid skill proficiency.
      */
     public Skill(String skillName, int skillProficiency) {
@@ -66,9 +66,9 @@ public class Skill {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Skill // instanceof handles nulls
-                && skillName.equals(((Skill) other).skillName)
-                && skillProficiency == ((Skill) other).skillProficiency); // state check
+            || (other instanceof Skill // instanceof handles nulls
+            && skillName.equals(((Skill) other).skillName)
+            && skillProficiency == ((Skill) other).skillProficiency); // state check
     }
 
     @Override

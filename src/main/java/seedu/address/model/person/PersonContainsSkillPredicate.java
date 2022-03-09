@@ -22,8 +22,8 @@ public class PersonContainsSkillPredicate implements Predicate<Person> {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof PersonContainsSkillPredicate // instanceof handles nulls
-                && skill.equals(((PersonContainsSkillPredicate) other).skill)); // state check
+            || (other instanceof PersonContainsSkillPredicate // instanceof handles nulls
+            && skill.equals(((PersonContainsSkillPredicate) other).skill)); // state check
     }
 
 }

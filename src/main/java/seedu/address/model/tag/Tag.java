@@ -1,7 +1,7 @@
 package seedu.address.model.tag;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
+import static seedu.address.model.util.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Tag in the address book.
@@ -35,8 +35,8 @@ public class Tag {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Tag // instanceof handles nulls
-                && tagName.equals(((Tag) other).tagName)); // state check
+            || (other instanceof Tag // instanceof handles nulls
+            && tagName.equals(((Tag) other).tagName)); // state check
     }
 
     @Override

@@ -1,4 +1,4 @@
-package seedu.address.commons.util;
+package seedu.address.model.util.commons.util;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -20,6 +20,7 @@ public class FileUtil {
     /**
      * Returns true if {@code path} can be converted into a {@code Path} via {@link Paths#get(String)},
      * otherwise returns false.
+     *
      * @param path A string representing the file path. Cannot be null.
      */
     public static boolean isValidPath(String path) {
@@ -33,6 +34,7 @@ public class FileUtil {
 
     /**
      * Creates a file if it does not exist along with its missing parent directories.
+     *
      * @throws IOException if the file or directory cannot be created.
      */
     public static void createIfMissing(Path file) throws IOException {

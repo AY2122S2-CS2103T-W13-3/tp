@@ -1,4 +1,4 @@
-package seedu.address.commons.core;
+package seedu.address.model.util.commons.core;
 
 import java.awt.Point;
 import java.io.Serializable;
@@ -59,8 +59,8 @@ public class GuiSettings implements Serializable {
         GuiSettings o = (GuiSettings) other;
 
         return windowWidth == o.windowWidth
-                && windowHeight == o.windowHeight
-                && Objects.equals(windowCoordinates, o.windowCoordinates);
+            && windowHeight == o.windowHeight
+            && Objects.equals(windowCoordinates, o.windowCoordinates);
     }
 
     @Override

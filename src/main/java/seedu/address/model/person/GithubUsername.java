@@ -1,7 +1,7 @@
 package seedu.address.model.person;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
+import static seedu.address.model.util.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Person's GitHub username in HackNet.
@@ -10,7 +10,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class GithubUsername {
 
     public static final String MESSAGE_CONSTRAINTS = "GitHub usernames can only contain alphanumeric"
-                                                    + " and hyphen characters, and must not be blank";
+        + " and hyphen characters, and must not be blank";
 
     public static final String VALIDATION_REGEX = "[\\p{Alnum}-]+";
 
@@ -42,8 +42,8 @@ public class GithubUsername {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof GithubUsername // instanceof handles nulls
-                && value.equals(((GithubUsername) other).value)); // state check
+            || (other instanceof GithubUsername // instanceof handles nulls
+            && value.equals(((GithubUsername) other).value)); // state check
     }
 
     @Override

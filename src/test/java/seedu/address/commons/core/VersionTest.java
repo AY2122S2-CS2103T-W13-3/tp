@@ -6,6 +6,8 @@ import static seedu.address.testutil.Assert.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
+import seedu.address.model.util.commons.core.Version;
+
 public class VersionTest {
 
     @Test
@@ -129,7 +131,7 @@ public class VersionTest {
     }
 
     private void verifyVersionParsedCorrectly(String versionString,
-            int major, int minor, int patch, boolean isEarlyAccess) {
+                                              int major, int minor, int patch, boolean isEarlyAccess) {
         assertEquals(new Version(major, minor, patch, isEarlyAccess), Version.fromString(versionString));
     }
 }

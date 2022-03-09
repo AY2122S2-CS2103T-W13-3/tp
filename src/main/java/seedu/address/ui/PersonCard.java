@@ -25,7 +25,8 @@ public class PersonCard extends UiPart<Region> {
      */
 
     public final Person person;
-
+    @FXML
+    private Label remark;
     @FXML
     private HBox cardPane;
     @FXML
@@ -54,12 +55,13 @@ public class PersonCard extends UiPart<Region> {
         phone.setText(person.getPhone().value);
         githubUsername.setText("@" + person.getGithubUsername().value);
         email.setText(person.getEmail().value);
+        remark.setText(person.getRemark().value);
         person.getTags().stream()
-                .sorted(Comparator.comparing(tag -> tag.tagName))
-                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+            .sorted(Comparator.comparing(tag -> tag.tagName))
+            .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
         person.getSkillSet().stream()
-                .sorted(Comparator.comparing(skill -> skill.skillName))
-                .forEach(skill -> skillSet.getChildren().add(new Label(skill.skillName)));
+            .sorted(Comparator.comparing(skill -> skill.skillName))
+            .forEach(skill -> skillSet.getChildren().add(new Label(skill.skillName)));
     }
 
     @Override
@@ -77,6 +79,6 @@ public class PersonCard extends UiPart<Region> {
         // state check
         PersonCard card = (PersonCard) other;
         return id.getText().equals(card.id.getText())
-                && person.equals(card.person);
+            && person.equals(card.person);
     }
 }

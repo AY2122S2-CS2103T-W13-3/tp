@@ -1,4 +1,4 @@
-package seedu.address.commons.exceptions;
+package seedu.address.model.util.commons.exceptions;
 
 /**
  * Signals that some given data does not fulfill some constraints.
@@ -13,7 +13,7 @@ public class IllegalValueException extends Exception {
 
     /**
      * @param message should contain relevant information on the failed constraint(s)
-     * @param cause of the main exception
+     * @param cause   of the main exception
      */
     public IllegalValueException(String message, Throwable cause) {
         super(message, cause);
