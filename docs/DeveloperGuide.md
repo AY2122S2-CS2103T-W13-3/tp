@@ -1,21 +1,46 @@
----
-layout: page
-title: Developer Guide
----
-* Table of Contents
-{:toc}
+
+## Table of Contents
+* [Acknowledgements](#Acknowledgements)
+* [Setting up, getting started](#Setting-up,-getting-started)
+* [Design](#design)
+  * [Architecture](#Architecture)
+  * [UI component](#UI-component)
+  * [Logic component](#Logic-component)
+  * [Model component](#Model-component)
+  * [Storage component](#Storage-component)
+  * [Common class](#common-class)
+    * [SkillSet class](#skillset-class)
+    * [Skill class](#skill-class)
+  * [Implementation](#Implementation)
+    * [Team forming feature](#Team-forming-feature)
+      * [Implementation](#Implementation)
+      * [Execution](#Execution)
+    * [Filtering feature](#Filtering-feature)
+        * [Implementation](#Implementation)
+        * [Execution](#Execution)
+    * [Undo/redo feature](#Undo/redo-feature)
+  * [\[Proposed\] Data archiving](#\[Proposed\]-Data-archiving)
+  * [Documentation, logging, testing, configuration, dev-ops](#Documentation,-logging,-testing,-configuration,-dev\-ops)
+  * [Appendix: Requirements](#Appendix:-Requirements)
+    * [Product scope](#Product-scope)
+      * [Target user profile](#Target-user-profile)
+    * [User stories](#User-stories)
+    * [Use cases](#Use-cases)
+    * [Non-Functional Requirements](#Non\-Functional-Requirements)
+    * [Glossary](#Glossary)
+    * [Appendix: Instructions for manual testing](#Appendix:-Instructions-for-manual-testing)
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Acknowledgements**
 
-* {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* This project would not have been possible without the help of [Ivan](https://github.com/wpinrui), and [prof Damith](https://github.com/damithc)
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
 
-Refer to the guide [_Setting up and getting started_](SettingUp.md).
+Refer to the guide [_Setting up and getting started_](https://github.com/AY2122S2-CS2103T-W13-3/tp/blob/master/docs/SettingUp.md).
 
 --------------------------------------------------------------------------------------------------------------------
 
